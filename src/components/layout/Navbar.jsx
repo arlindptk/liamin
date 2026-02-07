@@ -1,9 +1,11 @@
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar({ scrolled, isMenuOpen, setIsMenuOpen, navTo }) {
+export default function Navbar({ scrolled, isMenuOpen, setIsMenuOpen, navTo, hidden = false }) {
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-8'}`}>
+      <nav
+        className={`fixed top-0 w-full z-50 transition-all duration-700 ${hidden ? 'opacity-0 pointer-events-none -translate-y-4' : ''} ${!hidden && scrolled ? 'bg-black/95 backdrop-blur-xl border-b border-white/5 py-4' : !hidden ? 'bg-transparent py-8' : ''}`}
+      >
         <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
           <button onClick={() => navTo('home')} className="font-serif text-3xl tracking-[0.3em] font-bold text-white group outline-none">
             LIA<span className="text-[#C5A059] group-hover:text-white transition-colors">MIN</span>

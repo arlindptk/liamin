@@ -27,7 +27,7 @@ export default function ReservationView() {
             {CONTACT.phone}
           </a>
           <p className="text-gray-400 text-sm mt-6 max-w-lg mx-auto leading-relaxed">
-            Grillades au feu de bois, mezzés maison et poissons du jour dans une ambiance feutrée : réservez votre table et laissez-vous embarquer.
+            Grillades maison, mezzés maison et poissons du jour dans une ambiance feutrée : réservez votre table et laissez-vous embarquer.
           </p>
           <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
             Appelez-nous pour réserver ou pour toute question — nous sommes à votre écoute.

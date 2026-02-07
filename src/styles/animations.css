@@ -79,3 +79,48 @@
 .animate-glow-pulse {
   animation: glowPulse 3s ease-in-out infinite;
 }
+
+/* Zoom intro - perspective 3D */
+.zoom-container {
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.zoom-item {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.zoom-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.zoom-heading {
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Scroll indicator - souris animée */
+.scroll-mouse {
+  animation: scrollMouseBounce 2.2s ease-in-out infinite;
+}
+
+.scroll-mouse-wheel {
+  animation: scrollWheelDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollMouseBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes scrollWheelDown {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  45% { transform: translateY(10px); opacity: 0.4; }
+  55% { transform: translateY(10px); opacity: 0.4; }
+}

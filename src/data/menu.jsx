@@ -46,7 +46,7 @@ export const FULL_MENU = {
       ]
     },
     {
-      group: "Nos Grillades au Feu de Bois",
+      group: "Nos Grillades",
       items: [
         { name: "Mix grill", price: "27,50 €", desc: "L'assortiment royal de nos viandes" },
         { name: "Mezzé de plats", price: "26,50 €", desc: "Dégustation variée de nos spécialités chaudes" },

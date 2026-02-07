@@ -6,12 +6,17 @@ import ReservationView from './views/ReservationView';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [scrolled, setScrolled] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [activeCategory, setActiveCategory] = useState('entrees');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrolled = scrollY > 50;
+  const introScrollThreshold = typeof window !== 'undefined' ? window.innerHeight * 2.7 : 0;
+  const hideNavDuringIntro = currentPage === 'home' && scrollY < introScrollThreshold;
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrollY(window.scrollY);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -24,7 +29,7 @@ export default function App() {
 
   return (
     <div className="font-sans text-white bg-[#050505] min-h-screen">
-      <Navbar scrolled={scrolled} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} navTo={navTo} />
+      <Navbar scrolled={scrolled} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} navTo={navTo} hidden={hideNavDuringIntro} />
 
       <main>
         {currentPage === 'home' && <HomeView navTo={navTo} />}

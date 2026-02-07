@@ -1,8 +1,13 @@
+import { useState } from 'react';
 import { useInView } from '../hooks/useInView';
 import { Button } from '../components/ui';
 import { Flame, Leaf, Heart, Sparkles } from 'lucide-react';
+import BlazeIntro from '../components/intro/BlazeIntro';
+import ZoomIntro from '../components/intro/ZoomIntro';
+import ZoomRevealSection from '../components/intro/ZoomRevealSection';
 
 export default function HomeView({ navTo }) {
+  const [introPhase, setIntroPhase] = useState('blaze');
   const [refArt, inViewArt] = useInView();
   const [refHistoire, inViewHistoire] = useInView();
   const [refPiliers, inViewPiliers] = useInView();
@@ -34,19 +39,33 @@ export default function HomeView({ navTo }) {
 
   return (
     <div className="animate-fade-in bg-[#050505]">
+      {/* ——— Zoom toujours en DOM ; BlazeIntro en overlay pour éviter le flash Hero ——— */}
+      <ZoomIntro />
+      <ZoomRevealSection />
+      {introPhase === 'blaze' && (
+        <BlazeIntro onComplete={() => setIntroPhase('zoom')} />
+      )}
+
       {/* ——— Hero ——— */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#050505] z-10" />
         <img
           src="https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=1920&auto=format&fit=crop"
           className="absolute inset-0 w-full h-full object-cover animate-slow-zoom opacity-60"
           alt="Restaurant Ambiance"
         />
+        {/* Voile noir en haut : transition douce depuis la section texte */}
+        <div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, #050505 0%, #050505 25%, rgba(5,5,5,0.85) 45%, rgba(5,5,5,0.5) 65%, transparent 100%)',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#050505] z-[11]" />
         <div className="relative z-20 text-center px-4 max-w-4xl">
           <span className="text-[#C5A059] tracking-[0.5em] uppercase text-sm mb-6 block animate-slide-up opacity-0" style={{ animationDelay: '0.2s' }}>Since 2025</span>
           <h1 className="font-serif text-7xl md:text-9xl text-white mb-8 tracking-tighter animate-slide-up opacity-0" style={{ animationDelay: '0.4s' }}>LIAMIN</h1>
           <p className="text-lg md:text-xl text-gray-300 font-light tracking-widest uppercase mb-12 animate-slide-up opacity-0" style={{ animationDelay: '0.6s' }}>
-            Une expérience gastronomique nocturne
+            Une expérience culinaire nocturne
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up opacity-0" style={{ animationDelay: '0.8s' }}>
             <Button variant="primary" onClick={() => navTo('menu')}>Découvrir la Carte</Button>
@@ -91,7 +110,7 @@ export default function HomeView({ navTo }) {
               <h2 className="font-serif text-4xl md:text-5xl text-white">Une passion transmise</h2>
               <div className="w-20 h-px bg-[#C5A059]/50" />
               <p className="text-gray-400 text-lg leading-relaxed">
-                Liamin est né de l’envie de faire vivre la gastronomie méditerranéenne à La Bruyère. Depuis 2025, notre maison accueille les amateurs de saveurs sincères : mezzés préparés à la main, mijotés longuement en jarre, grillades au feu de bois et poissons choisis selon l’arrivage du jour.
+                Liamin est né de l’envie de faire vivre la cuisine méditerranéenne à La Bruyère. Depuis 2025, notre maison accueille les amateurs de saveurs sincères : mezzés préparés à la main, mijotés longuement en jarre, grillades maison et poissons choisis selon l’arrivage du jour.
               </p>
               <p className="text-gray-500 leading-relaxed">
                 Nous croyons que chaque repas doit être un moment de partage et d’évasion. C’est pourquoi nous veillons à ce que l’accueil, le cadre et l’assiette ne fassent qu’un — pour une expérience Liamin inoubliable.
@@ -152,7 +171,7 @@ export default function HomeView({ navTo }) {
         <div className={`max-w-3xl mx-auto px-6 text-center reveal-up ${inViewCta ? 'in-view' : ''}`}>
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-6">Prêt à vivre l’expérience ?</h2>
           <p className="text-gray-400 text-lg mb-12">
-            Découvrez notre carte, réservez votre table et laissez-vous embarquer pour une soirée gastronomique inoubliable.
+            Découvrez notre carte, réservez votre table et laissez-vous embarquer pour une soirée inoubliable.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button variant="primary" onClick={() => navTo('menu')}>Voir la Carte</Button>
