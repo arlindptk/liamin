@@ -1,0 +1,15 @@
+/* -------------------------------------------------------------------------- */
+/* UTILITIES - Scrollbar, etc.                                               */
+/* -------------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+}

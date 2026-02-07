@@ -1,0 +1,7 @@
+/* -------------------------------------------------------------------------- */
+/* LIAMIN - Global styles (les @import doivent être en premier)              */
+/* -------------------------------------------------------------------------- */
+
+@import './styles/base.css';
+@import './styles/animations.css';
+@import './styles/utilities.css';

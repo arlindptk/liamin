@@ -1,0 +1,20 @@
+/* -------------------------------------------------------------------------- */
+/* BASE - Tailwind + typography + selection                                  */
+/* -------------------------------------------------------------------------- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-serif {
+  font-family: 'Cinzel', serif;
+}
+
+.font-sans {
+  font-family: 'Montserrat', sans-serif;
+}
+
+::selection {
+  background: #C5A059;
+  color: black;
+}
