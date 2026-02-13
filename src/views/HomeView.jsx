@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useInView } from '../hooks/useInView';
 import { Button } from '../components/ui';
 import { Flame, Leaf, Heart, Sparkles } from 'lucide-react';
@@ -9,6 +9,21 @@ import ZoomRevealSection from '../components/intro/ZoomRevealSection';
 export default function HomeView({ navTo }) {
   const [introPhase, setIntroPhase] = useState('blaze');
   const [refArt, inViewArt] = useInView();
+
+  // Bloquer le scroll pendant l'animation BlazeIntro
+  useEffect(() => {
+    if (introPhase !== 'blaze') return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const preventScroll = (e) => e.preventDefault();
+    document.addEventListener('wheel', preventScroll, { passive: false });
+    document.addEventListener('touchmove', preventScroll, { passive: false });
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.removeEventListener('wheel', preventScroll);
+      document.removeEventListener('touchmove', preventScroll);
+    };
+  }, [introPhase]);
   const [refHistoire, inViewHistoire] = useInView();
   const [refPiliers, inViewPiliers] = useInView();
   const [refAmbiance, inViewAmbiance] = useInView();

@@ -2,12 +2,71 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LIAMIN — Gastronomie Fine Méditerranéenne</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#050505" />
+
+    <!-- SEO -->
+    <title>LIAMIN — Restaurant grec & cuisine méditerranéenne à La Bruyère (Namur)</title>
+    <meta name="description" content="Restaurant LIAMIN à La Bruyère : cuisine grecque et méditerranéenne, mezzés maison, grillades et poissons du jour. Réservez au 0470 06 08 04. Rue de Rhisnes 4, 5080 La Bruyère." />
+    <meta name="keywords" content="restaurant La Bruyère, cuisine grecque, méditerranéen, mezzés, grillades, Namur, réservation restaurant" />
+    <meta name="author" content="LIAMIN" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://liamin-restaurant.web.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_BE" />
+    <meta property="og:url" content="https://liamin-restaurant.web.app/" />
+    <meta property="og:title" content="LIAMIN — Restaurant grec & méditerranéen à La Bruyère" />
+    <meta property="og:description" content="Cuisine grecque et méditerranéenne, mezzés maison, grillades et poissons du jour. Réservez votre table au 0470 06 08 04." />
+    <meta property="og:site_name" content="LIAMIN" />
+    <meta property="og:image" content="https://liamin-restaurant.web.app/favicon.svg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LIAMIN — Restaurant grec & méditerranéen à La Bruyère" />
+    <meta name="twitter:description" content="Cuisine grecque et méditerranéenne, mezzés maison, grillades et poissons du jour. Réservez au 0470 06 08 04." />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Données structurées Restaurant (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "LIAMIN",
+      "description": "Restaurant de cuisine grecque et méditerranéenne à La Bruyère. Mezzés maison, grillades, poissons du jour. Une expérience culinaire nocturne.",
+      "url": "https://liamin-restaurant.web.app/",
+      "telephone": "+32470060804",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rue de Rhisnes 4",
+        "addressLocality": "La Bruyère",
+        "postalCode": "5080",
+        "addressCountry": "BE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.5145,
+        "longitude": 4.7978
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "18:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "18:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "18:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "18:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "18:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "14:30" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "18:00", "closes": "22:00" }
+      ],
+      "servesCuisine": ["Greek", "Mediterranean"],
+      "priceRange": "€€",
+      "image": "https://liamin-restaurant.web.app/favicon.svg"
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

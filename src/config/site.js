@@ -7,6 +7,8 @@ export const SITE = {
   name: 'LIAMIN',
   tagline: 'Prestige & Terroir',
   description: 'Gastronomie Fine Méditerranéenne. Des grillades de qualité supérieure et une sélection de mezzés artisanaux.',
+  /** URL du site en production (pour partage, canonical, etc.). À mettre à jour après déploiement Firebase. */
+  url: 'https://liamin-restaurant.web.app',
 };
 
 export const CONTACT = {

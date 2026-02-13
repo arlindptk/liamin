@@ -28,7 +28,7 @@ export default function App() {
   };
 
   return (
-    <div className="font-sans text-white bg-[#050505] min-h-screen">
+    <div className="font-sans text-white bg-[#050505] min-h-screen overflow-x-hidden max-w-[100vw]">
       <Navbar scrolled={scrolled} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} navTo={navTo} hidden={hideNavDuringIntro} />
 
       <main>

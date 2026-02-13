@@ -6,6 +6,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Éviter la barre de défilement horizontale (page trop large) */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 .font-serif {
   font-family: 'Cinzel', serif;
 }
