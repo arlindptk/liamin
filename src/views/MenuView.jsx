@@ -1,4 +1,6 @@
+import { Phone } from 'lucide-react';
 import { MENU_CATEGORIES, FULL_MENU } from '../data/menu';
+import { CONTACT } from '../config/site';
 
 export default function MenuView({ activeCategory, setActiveCategory }) {
   return (
@@ -9,6 +11,11 @@ export default function MenuView({ activeCategory, setActiveCategory }) {
           <h2 className="font-serif text-5xl md:text-6xl text-white mb-4">Le Menu</h2>
           <div className="w-24 h-1 bg-[#C5A059] mx-auto mb-6"></div>
           <p className="text-gray-400 uppercase tracking-[0.3em] text-xs">Tradition Grecque & Excellence Belge</p>
+          <div className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-[#C5A059]/30 text-gray-400 text-sm">
+            <Phone size={18} className="text-[#C5A059] shrink-0" />
+            <span>Commande par téléphone et retrait au restaurant.</span>
+            <a href={`tel:${CONTACT.phoneTel}`} className="text-[#C5A059] hover:underline font-medium ml-1">{CONTACT.phone}</a>
+          </div>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-20 sticky top-24 z-30 py-4 bg-[#050505]/80 backdrop-blur-md">

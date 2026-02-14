@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Sparkles, UtensilsCrossed } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Sparkles, UtensilsCrossed } from 'lucide-react';
 import { CONTACT, HORAIRES } from '../config/site';
 
 export default function ReservationView() {
@@ -32,6 +32,10 @@ export default function ReservationView() {
           <p className="text-gray-500 text-sm mt-3 max-w-md mx-auto">
             Appelez-nous pour réserver ou pour toute question — nous sommes à votre écoute.
           </p>
+          <a href={`mailto:${CONTACT.email}`} className="inline-flex items-center gap-2 mt-6 text-[#C5A059] hover:text-white transition-colors text-sm">
+            <Mail size={18} />
+            {CONTACT.email}
+          </a>
         </div>
 
         {/* Infos pratiques en grille */}

@@ -6,7 +6,7 @@
 export const SITE = {
   name: 'LIAMIN',
   tagline: 'Prestige & Terroir',
-  description: 'Gastronomie Fine Méditerranéenne. Des grillades de qualité supérieure et une sélection de mezzés artisanaux.',
+  description: 'Cuisine raffinée grecque. Des grillades de qualité supérieure et une sélection de mezzés artisanaux.',
   /** URL du site en production (pour partage, canonical, etc.). À mettre à jour après déploiement Firebase. */
   url: 'https://liamin-restaurant.web.app',
 };
@@ -14,6 +14,7 @@ export const SITE = {
 export const CONTACT = {
   phone: '0470 06 08 04',
   phoneTel: '+32470060804',
+  email: 'Contact@liamin.be',
   address: {
     street: 'Rue de Rhisnes 4',
     zip: '5080',

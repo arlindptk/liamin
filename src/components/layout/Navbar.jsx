@@ -14,6 +14,7 @@ export default function Navbar({ scrolled, isMenuOpen, setIsMenuOpen, navTo, hid
           <div className="hidden md:flex items-center gap-12 font-serif text-[10px] tracking-[0.3em] uppercase">
             <button onClick={() => navTo('home')} className="hover:text-[#C5A059] transition-all outline-none">Concept</button>
             <button onClick={() => navTo('menu')} className="hover:text-[#C5A059] transition-all outline-none">La Carte</button>
+            <button onClick={() => navTo('privatisation')} className="hover:text-[#C5A059] transition-all outline-none">Salle Privatisée</button>
             <button onClick={() => navTo('reservation')} className="border border-[#C5A059] text-[#C5A059] px-6 py-2 hover:bg-[#C5A059] hover:text-black transition-all outline-none">Réserver</button>
           </div>
 
@@ -27,6 +28,7 @@ export default function Navbar({ scrolled, isMenuOpen, setIsMenuOpen, navTo, hid
         <div className="fixed inset-0 z-[60] bg-black flex flex-col items-center justify-center gap-10 animate-fade-in">
           <button onClick={() => navTo('home')} className="font-serif text-3xl text-white">Concept</button>
           <button onClick={() => navTo('menu')} className="font-serif text-3xl text-white">La Carte</button>
+          <button onClick={() => navTo('privatisation')} className="font-serif text-3xl text-white">Salle Privatisée</button>
           <button onClick={() => navTo('reservation')} className="font-serif text-3xl text-[#C5A059]">Réserver</button>
           <button onClick={() => setIsMenuOpen(false)} className="mt-12 text-white/40 uppercase text-[10px] tracking-widest flex items-center gap-2">Fermer <X size={14} /></button>
         </div>

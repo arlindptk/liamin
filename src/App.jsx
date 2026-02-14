@@ -3,6 +3,7 @@ import { Navbar, Footer } from './components/layout';
 import HomeView from './views/HomeView';
 import MenuView from './views/MenuView';
 import ReservationView from './views/ReservationView';
+import PrivatisationView from './views/PrivatisationView';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -34,6 +35,7 @@ export default function App() {
       <main>
         {currentPage === 'home' && <HomeView navTo={navTo} />}
         {currentPage === 'menu' && <MenuView activeCategory={activeCategory} setActiveCategory={setActiveCategory} />}
+        {currentPage === 'privatisation' && <PrivatisationView navTo={navTo} />}
         {currentPage === 'reservation' && <ReservationView />}
       </main>
 

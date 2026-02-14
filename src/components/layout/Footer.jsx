@@ -1,4 +1,4 @@
-import { MapPin, Phone, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 import { SITE, CONTACT, HORAIRES, SOCIAL } from '../../config/site';
 
 export default function Footer() {
@@ -41,7 +41,11 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-4">
               <Phone size={18} className="text-[#C5A059]" />
-              <span>{CONTACT.phone}</span>
+              <a href={`tel:${CONTACT.phoneTel}`} className="hover:text-[#C5A059] transition-colors">{CONTACT.phone}</a>
+            </div>
+            <div className="flex items-center gap-4">
+              <Mail size={18} className="text-[#C5A059]" />
+              <a href={`mailto:${CONTACT.email}`} className="hover:text-[#C5A059] transition-colors">{CONTACT.email}</a>
             </div>
           </div>
         </div>
